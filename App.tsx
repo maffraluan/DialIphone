@@ -1,12 +1,15 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { StatusBar } from 'react-native'
+import Routes from './src/Routes'
 
 const App: React.FC = () => {
   return (
     <>
-      <SafeAreaView>
-
-      </SafeAreaView>
+      <StatusBar barStyle="dark-content" />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </>
   );
 };
