@@ -9,6 +9,19 @@ export const RoundedRow = styled.View`
     margin-top: 20px;
 `;
 
+export const Display = styled.View`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 10%;
+`;
+
+export const TextDisplay = styled.Text`
+    font-size: 50px;
+    font-weight: 500,
+`;
+
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,

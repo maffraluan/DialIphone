@@ -1,23 +1,29 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { TextInput } from 'react-native'
 import { RoundedView, TouchaRounded, styles } from './styled'
 
 type RoundedProps = {
-    readonly textNumber?: any,
-    readonly textLetter?: any,
+    textNumber?: string | any,
+    textLetter?: string,
     style?: object | undefined,
-    bgColor?: object | undefined
-}
+    onPress?: () => void,
+};
 
 const Rounded: React.FC<RoundedProps> = (props) => {
     return (
-        <TouchaRounded>
+        <TouchaRounded onPress={props.onPress} >
             <RoundedView style={props.style}>
-                <Text style={[props.style, styles.textNumber]}>{props.textNumber}</Text>
+                <TextInput
+                    editable={false} style={[props.style, styles.textNumber]}>
+                    {props.textNumber}
+                </TextInput>
+
                 {props.textLetter ?
-                    <Text style={[props.style, styles.textLetter]}>
+                    <TextInput
+                        editable={false}
+                        style={[props.style, styles.textLetter]}>
                         {props.textLetter}
-                    </Text>
+                    </TextInput>
                     : null}
             </RoundedView>
         </TouchaRounded>

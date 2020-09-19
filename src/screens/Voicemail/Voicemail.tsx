@@ -1,11 +1,22 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { SafeAreaView, View, Text, TouchableHighlight } from 'react-native'
+import { styles } from './styles'
 
 const Voicemail: React.FC = () => {
     return (
-        <View>
-            <Text>Voicemail screen</Text>
-        </View>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+            <View style={styles.viewVoicemail}>
+                <Text style={styles.textVoicemail}>Voicemail</Text>
+            </View>
+
+            <View style={styles.viewButton}>
+                <TouchableHighlight>
+                    <View style={styles.buttonBorder}>
+                        <Text style={styles.textButton}>Call Voicemail</Text>
+                    </View>
+                </TouchableHighlight>
+            </View>
+        </SafeAreaView>
     )
 }
 
